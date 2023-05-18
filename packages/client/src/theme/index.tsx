@@ -51,6 +51,7 @@ export const Subtitle = styled.span`
 `;
 
 export const Card = styled.div`
+  color: white;
   width: 480px;
   height: 400px;
   background: #23272f;
