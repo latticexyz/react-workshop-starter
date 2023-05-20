@@ -4,5 +4,22 @@ import { TableId } from "@latticexyz/utils";
 import { defineComponent, Type as RecsType, World } from "@latticexyz/recs";
 
 export function defineContractComponents(world: World) {
-  return {};
+  return {
+    ToDo: (() => {
+      const tableId = new TableId("", "ToDo");
+      return defineComponent(
+        world,
+        {
+          done: RecsType.Boolean,
+          body: RecsType.String,
+        },
+        {
+          metadata: {
+            contractId: tableId.toHexString(),
+            tableId: tableId.toString(),
+          },
+        }
+      );
+    })(),
+  };
 }

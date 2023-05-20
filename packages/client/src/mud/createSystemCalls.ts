@@ -11,5 +11,10 @@ export function createSystemCalls(
   { worldSend }: SetupNetworkResult,
   components: ClientComponents
 ) {
-  return {};
+  const addToDo = (body: string) => {
+    worldSend("addToDo", [ body ]);
+  }
+  return {
+    addToDo,
+  };
 }
