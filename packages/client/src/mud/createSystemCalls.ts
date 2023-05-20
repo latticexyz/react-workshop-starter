@@ -14,7 +14,11 @@ export function createSystemCalls(
   const addToDo = (body: string) => {
     worldSend("addToDo", [ body ]);
   }
+  const toggleDone = (id: string) => {
+    worldSend("toggleDone", [entityToBytes32(id)]);
+  }
   return {
+    toggleDone,
     addToDo,
   };
 }

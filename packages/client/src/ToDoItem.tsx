@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useMUD } from "./MUDContext";
 
 type Props = {
   id: string;
@@ -16,12 +17,19 @@ const ToDoItemWrapper = styled.div`
 
 
 export function ToDoItem({id, body, done}: Props) {
+  const { 
+    systemCalls: {
+      toggleDone,
+    }
+  } = useMUD();
   return (
     <ToDoItemWrapper>
       <span>
         {body}
       </span>
-      <input type="checkbox" checked={done} onChange={(e) => {}}/>
+      <input type="checkbox" checked={done} onChange={(e) => {
+        toggleDone(id);
+      }}/>
     </ToDoItemWrapper>
   )
 }

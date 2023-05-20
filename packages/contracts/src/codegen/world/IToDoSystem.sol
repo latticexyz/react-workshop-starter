@@ -5,4 +5,6 @@ pragma solidity >=0.8.0;
 
 interface IToDoSystem {
   function addToDo(string memory body) external;
+
+  function toggleDone(bytes32 todoId) external;
 }

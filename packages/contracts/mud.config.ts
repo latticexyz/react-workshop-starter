@@ -5,6 +5,7 @@ export default mudConfig({
     ToDo: {
       schema: {
         done: "bool",
+        owner: "bytes32",
         body: "string",
       }
     }

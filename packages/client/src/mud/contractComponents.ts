@@ -11,6 +11,7 @@ export function defineContractComponents(world: World) {
         world,
         {
           done: RecsType.Boolean,
+          owner: RecsType.String,
           body: RecsType.String,
         },
         {
